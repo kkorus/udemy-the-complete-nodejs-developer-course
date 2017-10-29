@@ -4,13 +4,14 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "mocha tests/**/*.test.js"
+        "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha tests/**/*.test.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
         "body-parser": "^1.18.2",
         "express": "^4.16.2",
+        "lodash": "^4.17.4",
         "mongodb": "^2.2.33",
         "mongoose": "^4.12.4"
     },
