@@ -242,12 +242,24 @@ describe('POST /todos', () => {
                 });
         });
 
-        it('should return validation errors if request invalid', (done) => {
-
+        it.only('should return validation errors if request invalid', (done) => {
+            var email = 'invalid email';
+            var password = '';
+            request(app)
+                .post('/users')
+                .send({ email, password })
+                .expect(400)
+                .end(done);
         });
 
-        it('should not create user if email in use', (done) => {
-
+        it.only('should not create user if email in use', (done) => {
+            var email = users[0].email;
+            var password = users[0].password;
+            request(app)
+                .post('/users')
+                .send({ email, password })
+                .expect(400)
+                .end(done);
         });
     });
 });
