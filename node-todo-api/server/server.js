@@ -1,8 +1,8 @@
-var config = require('../config');
+const config = require('../config');
 
-var express = require('express');
-var bodyParser = require('body-parser');
-var _ = require('lodash');
+const express = require('express');
+const bodyParser = require('body-parser');
+const _ = require('lodash');
 
 const { ObjectID } = require('mongodb');
 const { mongoose } = require('./db/mongoose');
@@ -10,7 +10,7 @@ const { Todo } = require('./models/todo');
 const { User } = require('./models/user');
 const { authenticate } = require('./middleware/authenticate');
 
-var app = express();
+const app = express();
 app.use(bodyParser.json());
 
 app.post('/todos', authenticate, (req, res) => {
